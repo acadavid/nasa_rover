@@ -1,0 +1,18 @@
+== NASA Rover
+Implementation of NASA Rovers coding challenge
+
+== Setup
+  bundle
+
+== Running tests
+  rake test
+
+== Generating output with input.in file
+  ruby nasa_rovers.rb
+
+== Notes
+* The input file assumes no spaces in between lines.
+
+* I implemented a quick-and-dirty input/output processing but I better way could be just creating an InputReader module and an OutputWriter module to handle it, instead of having the objects in the main scope
+
+* When the rover's moves to an invalid position (edge of the plateau), the movement wont be executed, it will fail silently. A better way could be throwing an exception, but for simplicity I just did it like that.
