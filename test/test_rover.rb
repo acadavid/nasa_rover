@@ -41,6 +41,46 @@ class TestRover < Minitest::Test
     assert_equal @rover.pos_y, 10
   end
 
+  def test_execute_movements_north_then_south
+    movements = "MMLL"
+    @rover.execute_movements(movements)
+    assert_equal 5,@rover.pos_x
+    assert_equal 7,@rover.pos_y
+    assert_equal "S",@rover.heading
+  end
+
+  def test_execute_movements_south_then_east
+    movements = "RRMML"
+    @rover.execute_movements(movements)
+    assert_equal 5,@rover.pos_x
+    assert_equal 3,@rover.pos_y
+    assert_equal "E",@rover.heading
+  end
+
+  def test_execute_movements_west_then_north
+    movements = "LMMR"
+    @rover.execute_movements(movements)
+    assert_equal 3,@rover.pos_x
+    assert_equal 5,@rover.pos_y
+    assert_equal "N",@rover.heading
+  end
+
+  def test_execute_movements_east_then_west
+    movements = "RMMLL"
+    @rover.execute_movements(movements)
+    assert_equal 7,@rover.pos_x
+    assert_equal 5,@rover.pos_y
+    assert_equal "W",@rover.heading
+  end
+
+  def test_execute_movements
+    movements = "MMRMRRLMMRMRMLMML"
+    @rover.execute_movements(movements)
+    assert_equal 3,@rover.pos_x
+    assert_equal 6,@rover.pos_y
+    assert_equal "S",@rover.heading
+  end
+
   def teardown
     @rover = nil
     @plateau = nil

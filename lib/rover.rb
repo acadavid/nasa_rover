@@ -52,4 +52,17 @@ class Rover
     @heading = nh
   end
 
+  def execute_movements(movements)
+    movements.each_char do |m|
+      case m
+      when "L"
+        spin_ninty_degrees_left
+      when "R"
+        spin_ninty_degrees_right
+      when "M"
+        move_forward
+      end
+    end
+  end
+
 end
