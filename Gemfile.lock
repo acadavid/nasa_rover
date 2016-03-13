@@ -1,0 +1,17 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    byebug (8.2.2)
+    minitest (5.8.4)
+    rake (11.1.0)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  byebug
+  minitest (~> 5.8, >= 5.8.4)
+  rake (~> 11.1, >= 11.1.0)
+
+BUNDLED WITH
+   1.11.2
